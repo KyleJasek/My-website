@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paws & Stroll | Professional Dog Walking in London, ON</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1586671267731-da2cf3ceeb80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1790&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-card:hover .service-icon {
+            transform: rotate(15deg) scale(1.1);
+        }
+        
+        .dog-icon {
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .map-container {
+            height: 400px;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-paw text-amber-500 text-2xl mr-2"></i>
+                        <span class="text-xl font-bold text-gray-800">Paws & Stroll</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-800 hover:text-amber-500 px-3 py-2 font-medium">Home</a>
+                    <a href="#services" class="text-gray-800 hover:text-amber-500 px-3 py-2 font-medium">Services</a>
+                    <a href="#about" class="text-gray-800 hover:text-amber-500 px-3 py-2 font-medium">About</a>
+                    <a href="#testimonials" class="text-gray-800 hover:text-amber-500 px-3 py-2 font-medium">Testimonials</a>
+                    <a href="#contact" class="bg-amber-500 hover:bg-amber-600 text-white px-4 py-2 rounded-md font-medium transition duration-300">Book a Walk</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="menu-btn" class="text-gray-800 hover:text-amber-500 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:text-amber-500 hover:bg-gray-100">Home</a>
+                <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:text-amber-500 hover:bg-gray-100">Services</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:text-amber-500 hover:bg-gray-100">About</a>
+                <a href="#testimonials" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:text-amber-500 hover:bg-gray-100">Testimonials</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-amber-500 hover:bg-amber-600">Book a Walk</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero text-white py-20 md:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Professional Dog Walking Services in London, ON</h1>
+                    <p class="text-xl mb-8">We give your furry friends the exercise and attention they deserve while you're busy.</p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#contact" class="bg-amber-500 hover:bg-amber-600 text-white px-6 py-3 rounded-md font-medium text-center transition duration-300">Book Now</a>
+                        <a href="#services" class="bg-white hover:bg-gray-100 text-gray-800 px-6 py-3 rounded-md font-medium text-center transition duration-300">Our Services</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative w-64 h-64 md:w-80 md:h-80">
+                        <img src="https://images.unsplash.com/photo-1586671267731-da2cf3ceeb80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1790&q=80" alt="Happy dog being walked" class="rounded-full border-4 border-amber-400 w-full h-full object-cover">
+                        <div class="absolute -bottom-4 -right-4 bg-amber-400 rounded-full p-4">
+                            <i class="fas fa-paw text-white text-3xl dog-icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Our Tail-Wagging Services</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">From short strolls to adventurous hikes, we've got the perfect walk for your pup's energy level.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-gray-50 rounded-xl p-8 shadow-md hover:shadow-xl transition duration-300">
+                    <div class="service-icon bg-amber-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 transition duration-300">
+                        <i class="fas fa-walking text-amber-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Standard Walk</h3>
+                    <p class="text-gray-600 mb-4">A 30-minute neighborhood walk perfect for bathroom breaks and light exercise.</p>
+                    <div class="flex items-center text-amber-500 font-medium">
+                        <span>$18</span>
+                        <span class="mx-2">•</span>
+                        <span>30 min</span>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card bg-gray-50 rounded-xl p-8 shadow-md hover:shadow-xl transition duration-300">
+                    <div class="service-icon bg-amber-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 transition duration-300">
+                        <i class="fas fa-hiking text-amber-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Adventure Hike</h3>
+                    <p class="text-gray-600 mb-4">A 60-minute exploration of London's parks and trails for energetic pups.</p>
+                    <div class="flex items-center text-amber-500 font-medium">
+                        <span>$28</span>
+                        <span class="mx-2">•</span>
+                        <span>60 min</span>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card bg-gray-50 rounded-xl p-8 shadow-md hover:shadow-xl transition duration-300">
+                    <div class="service-icon bg-amber-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 transition duration-300">
+                        <i class="fas fa-home text-amber-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Puppy Visit</h3>
+                    <p class="text-gray-600 mb-4">A 20-minute check-in for puppies including potty break, playtime, and feeding.</p>
+                    <div class="flex items-center text-amber-500 font-medium">
+                        <span>$15</span>
+                        <span class="mx-2">•</span>
+                        <span>20 min</span>
+                    </div>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card bg-gray-50 rounded-xl p-8 shadow-md hover:shadow-xl transition duration-300">
+                    <div class="service-icon bg-amber-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 transition duration-300">
+                        <i class="fas fa-users text-amber-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Group Walk</h3>
+                    <p class="text-gray-600 mb-4">Socialization walk with 2-4 compatible dogs from your neighborhood.</p>
+                    <div class="flex items-center text-amber-500 font-medium">
+                        <span>$14</span>
+                        <span class="mx-2">•</span>
+                        <span>45 min</span>
+                    </div>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card bg-gray-50 rounded-xl p-8 shadow-md hover:shadow-xl transition duration-300">
+                    <div class="service-icon bg-amber-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 transition duration-300">
+                        <i class="fas fa-sun text-amber-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Weekend Adventure</h3>
+                    <p class="text-gray-600 mb-4">A 2-hour weekend excursion to London's best dog-friendly spots.</p>
+                    <div class="flex items-center text-amber-500 font-medium">
+                        <span>$45</span>
+                        <span class="mx-2">•</span>
+                        <span>120 min</span>
+                    </div>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="service-card bg-gray-50 rounded-xl p-8 shadow-md hover:shadow-xl transition duration-300">
+                    <div class="service-icon bg-amber-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 transition duration-300">
+                        <i class="fas fa-calendar-alt text-amber-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Vacation Package</h3>
+                    <p class="text-gray-600 mb-4">Daily walks and care while you're away. Discounted weekly rate.</p>
+                    <div class="flex items-center text-amber-500 font-medium">
+                        <span>$95</span>
+                        <span class="mx-2">•</span>
+                        <span>5 days</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <img src="https://images.unsplash.com/photo-1559190394-df5a28aab5c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80" alt="Dog walker with happy dogs" class="rounded-xl shadow-lg w-full h-auto">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Why Choose Paws & Stroll?</h2>
+                    <p class="text-gray-600 mb-6">Founded in 2018, Paws & Stroll has been London's trusted dog walking service, providing reliable and loving care for your four-legged family members.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-amber-100 p-2 rounded-full mr-4">
+                                <i class="fas fa-shield-alt text-amber-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-1">Fully Insured & Bonded</h4>
+                                <p class="text-gray-600">Your pet's safety is our top priority. We're fully insured for your peace of mind.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-amber-100 p-2 rounded-full mr-4">
+                                <i class="fas fa-certificate text-amber-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-1">Certified Professionals</h4>
+                                <p class="text-gray-600">Our walkers are trained in pet first aid and canine behavior.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-amber-100 p-2 rounded-full mr-4">
+                                <i class="fas fa-map-marked-alt text-amber-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-1">Local Experts</h4>
+                                <p class="text-gray-600">We know all the best dog-friendly routes in London, from Springbank Park to Thames Valley Parkway.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-amber-100 p-2 rounded-full mr-4">
+                                <i class="fas fa-camera text-amber-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-1">Photo Updates</h4>
+                                <p class="text-gray-600">Receive adorable photos and a detailed report after every walk.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Barking Happy Customers</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Don't just take our word for it - hear what London pet parents have to say!</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card bg-gray-50 rounded-xl p-8 shadow-md hover:shadow-xl transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="flex-shrink-0">
+                            <img class="h-10 w-10 rounded-full" src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah J.">
+                        </div>
+                        <div class="ml-4">
+                            <div class="font-medium text-gray-800">Sarah J.</div>
+                            <div class="text-amber-500">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"Paws & Stroll has been a lifesaver for my energetic Labrador. They know all the best trails in London and my dog comes home happy and tired every time!"</p>
+                    <div class="mt-4 text-sm text-gray-500">
+                        <i class="fas fa-map-marker-alt mr-1"></i> Old North, London
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card bg-gray-50 rounded-xl p-8 shadow-md hover:shadow-xl transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="flex-shrink-0">
+                            <img class="h-10 w-10 rounded-full" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael T.">
+                        </div>
+                        <div class="ml-4">
+                            <div class="font-medium text-gray-800">Michael T.</div>
+                            <div class="text-amber-500">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"As a busy professional, I rely on Paws & Stroll to give my senior dog the gentle walks he needs. Their attention to his special needs is exceptional."</p>
+                    <div class="mt-4 text-sm text-gray-500">
+                        <i class="fas fa-map-marker-alt mr-1"></i> Downtown, London
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card bg-gray-50 rounded-xl p-8 shadow-md hover:shadow-xl transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="flex-shrink-0">
+                            <img class="h-10 w-10 rounded-full" src="https://randomuser.me/api/portraits/women/65.jpg" alt="Jennifer L.">
+                        </div>
+                        <div class="ml-4">
+                            <div class="font-medium text-gray-800">Jennifer L.</div>
+                            <div class="text-amber-500">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"The photo updates after each walk are my favorite part of the day! I love seeing how happy my rescue pup is with his walker. Highly recommend to all London pet owners."</p>
+                    <div class="mt-4 text-sm text-gray-500">
+                        <i class="fas fa-map-marker-alt mr-1"></i> Wortley Village, London
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="#" class="inline-flex items-center text-amber-500 font-medium">
+                    Read more reviews
+                    <i class="fas fa-chevron-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Area Map -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Our London Service Area</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">We proudly serve these neighborhoods in London, Ontario</p>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-lg p-6">
+                <div class="map-container">
+                    <!-- This would be replaced with an actual Google Maps embed in production -->
+                    <div class="bg-gray-200 w-full h-full flex items-center justify-center">
+                        <div class="text-center p-8">
+                            <i class="fas fa-map-marked-alt text-4xl text-amber-500 mb-4"></i>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">London, Ontario Service Area</h3>
+                            <p class="text-gray-600 mb-4">We serve all of London including:</p>
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-gray-700">
+                                <div class="flex items-center">
+                                    <i class="fas fa-paw text-amber-500 mr-2"></i>
+                                    <span>Old North</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-paw text-amber-500 mr-2"></i>
+                                    <span>Downtown</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-paw text-amber-500 mr-2"></i>
+                                    <span>Wortley Village</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-paw text-amber-500 mr-2"></i>
+                                    <span>Byron</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-paw text-amber-500 mr-2"></i>
+                                    <span>Masonville</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-paw text-amber-500 mr-2"></i>
+                                    <span>White Oaks</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-paw text-amber-500 mr-2"></i>
+                                    <span>Stoneybrook</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-paw text-amber-500 mr-2"></i>
+                                    <span>Oakridge</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Ready to Get Walking?</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Contact us to schedule your free meet-and-greet today!</p>
+            </div>
+            
+            <div class="md:flex">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700">Your Name</label>
+                            <input type="text" id="name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-amber-500 focus:ring-amber-500 p-3 border">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+                            <input type="email" id="email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-amber-500 focus:ring-amber-500 p-3 border">
+                        </div>
+                        
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number</label>
+                            <input type="tel" id="phone" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-amber-500 focus:ring-amber-500 p-3 border">
+                        </div>
+                        
+                        <div>
+                            <label for="dog" class="block text-sm font-medium text-gray-700">Tell Us About Your Dog</label>
+                            <textarea id="dog" rows="4" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-amber-500 focus:ring-amber-500 p-3 border"></textarea>
+                        </div>
+                        
+                        <div>
+                            <label for="service" class="block text-sm font-medium text-gray-700">Service Interested In</label>
+                            <select id="service" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-amber-500 focus:ring-amber-500 p-3 border">
+                                <option>Standard Walk (30 min)</option>
+                                <option>Adventure Hike (60 min)</option>
+                                <option>Puppy Visit (20 min)</option>
+                                <option>Group Walk (45 min)</option>
+                                <option>Weekend Adventure (2 hours)</option>
+                                <option>Vacation Package (5 days)</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <button type="submit" class="w-full bg-amber-500 hover:bg-amber-600 text-white font-medium py-3 px-4 rounded-md transition duration-300">
+                                Request Booking
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <div class="bg-gray-50 rounded-xl p-8 h-full">
+                        <h3 class="text-xl font-bold text-gray-800 mb-6">Contact Information</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-amber-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-map-marker-alt text-amber-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 mb-1">Our Location</h4>
+                                    <p class="text-gray-600">123 Dogwood Ave, London, ON N6G 1X2</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-amber-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-phone-alt text-amber-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 mb-1">Call Us</h4>
+                                    <p class="text-gray-600">(519) 555-PAWS</p>
+                                    <p class="text-sm text-gray-500 mt-1">Mon-Fri: 8am-6pm</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-amber-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-envelope text-amber-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 mb-1">Email Us</h4>
+                                    <p class="text-gray-600">hello@pawsandstroll.ca</p>
+                                    <p class="text-sm text-gray-500 mt-1">Typically respond within 24 hours</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-amber-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-dog text-amber-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 mb-1">New Client Offer</h4>
+                                    <p class="text-gray-600">Get 10% off your first walk when you book online!</p>
+                                    <p class="text-sm text-amber-500 font-medium mt-1">Use code: LONDONPAWS10</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="font-bold text-gray-800 mb-4">Follow Us</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="bg-gray-200 hover:bg-amber-500 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="bg-gray-200 hover:bg-amber-500 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="bg-gray-200 hover:bg-amber-500 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Frequently Asked Questions</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Everything you need to know about our dog walking services</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="space-y-4">
+                    <!-- FAQ Item 1 -->
+                    <div class="border border-gray-200 rounded-xl overflow-hidden">
+                        <button class="faq-btn w-full flex justify-between items-center p-6 text-left bg-white hover:bg-gray-50 transition duration-300">
+                            <span class="text-lg font-medium text-gray-800">What areas of London do you serve?</span>
+                            <i class="fas fa-chevron-down text-amber-500 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-6 bg-white">
+                            <p class="text-gray-600">We serve all of London, Ontario including Old North, Downtown, Wortley Village, Byron, Masonville, White Oaks, Stoneybrook, Oakridge, and surrounding areas. If you're unsure if we cover your neighborhood, please contact us!</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 2 -->
+                    <div class="border border-gray-200 rounded-xl overflow-hidden">
+                        <button class="faq-btn w-full flex justify-between items-center p-6 text-left bg-white hover:bg-gray-50 transition duration-300">
+                            <span class="text-lg font-medium text-gray-800">How do you handle different weather conditions?</span>
+                            <i class="fas fa-chevron-down text-amber-500 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-6 bg-white">
+                            <p class="text-gray-600">We walk in all weather conditions unless it becomes unsafe (extreme cold warnings, thunderstorms, etc.). In summer, we walk early or late to avoid heat, carry water, and seek shade. In winter, we limit time outside in extreme cold and use dog-safe ice melt. We'll always adjust the walk to keep your pup safe and comfortable.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 3 -->
+                    <div class="border border-gray-200 rounded-xl overflow-hidden">
+                        <button class="faq-btn w-full flex justify-between items-center p-6 text-left bg-white hover:bg-gray-50 transition duration-300">
+                            <span class="text-lg font-medium text-gray-800">What's your cancellation policy?</span>
+                            <i class="fas fa-chevron-down text-amber-500 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-6 bg-white">
+                            <p class="text-gray-600">We require 24 hours notice for cancellations to avoid being charged. For last-minute cancellations due to emergencies, we're happy to work with you. Vacation packages require 72 hours notice for cancellation.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 4 -->
+                    <div class="border border-gray-200 rounded-xl overflow-hidden">
+                        <button class="faq-btn w-full flex justify-between items-center p-6 text-left bg-white hover:bg-gray-50 transition duration-300">
+                            <span class="text-lg font-medium text-gray-800">Do you walk multiple dogs together?</span>
+                            <i class="fas fa-chevron-down text-amber-500 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-6 bg-white">
+                            <p class="text-gray-600">We only walk dogs together with owner permission and after ensuring compatibility. Our group walks are limited to 4 dogs max with similar energy levels and temperaments. All group walk dogs must be well-socialized and non-aggressive.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 5 -->
+                    <div class="border border-gray-200 rounded-xl overflow-hidden">
+                        <button class="faq-btn w-full flex justify-between items-center p-6 text-left bg-white hover:bg-gray-50 transition duration-300">
+                            <span class="text-lg font-medium text-gray-800">What safety measures do you have in place?</span>
+                            <i class="fas fa-chevron-down text-amber-500 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-6 bg-white">
+                            <p class="text-gray-600">All walkers are trained in pet first aid, carry emergency supplies, and have your vet info on file. We use secure harnesses/leashes, avoid high-traffic areas, and never let dogs off-leash unless in a fully fenced area with your permission. We're also fully insured for your peace of mind.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-12 text-center">
+                    <p class="text-gray-600 mb-4">Have more questions?</p>
+                    <a href="#contact" class="inline-flex items-center text-amber-500 font-medium">
+                        Contact us
+                        <i class="fas fa-chevron-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-paw text-amber-400 text-2xl mr-2"></i>
+                        <span class="text-xl font-bold">Paws & Stroll</span>
+                    </div>
+                    <p class="text-gray-400">London's trusted dog walking service since 2018. Giving your furry friends the exercise and attention they deserve.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-amber-400 transition duration-300">Home</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-amber-400 transition duration-300">Services</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-amber-400 transition duration-300">About Us</a></li>
+                        <li><a href="#testimonials" class="text-gray-400 hover:text-amber-400 transition duration-300">Testimonials</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-amber-400 transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-amber-400 transition duration-300">Standard Walks</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-amber-400 transition duration-300">Adventure Hikes</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-amber-400 transition duration-300">Puppy Visits</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-amber-400 transition duration-300">Group Walks</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-amber-400 transition duration-300">Vacation Care</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact Us</h4>
+                    <address class="not-italic text-gray-400">
+                        <p class="mb-2">123 Dogwood Ave</p>
+                        <p class="mb-2">London, ON N6G 1X2</p>
+                        <p class="mb-2">(519) 555-PAWS</p>
+                        <p class="mb-4">hello@pawsandstroll.ca</p>
+                    </address>
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-gray-700 hover:bg-amber-500 w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="bg-gray-700 hover:bg-amber-500 w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="bg-gray-700 hover:bg-amber-500 w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2023 Paws & Stroll. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-amber-400 transition duration-300">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-amber-400 transition duration-300">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // FAQ accordion
+        const faqBtns = document.querySelectorAll('.faq-btn');
+        
+        faqBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const content = btn.nextElementSibling;
+                const icon = btn.querySelector('i');
+                
+                // Toggle content
+                content.classList.toggle('hidden');
+                
+                // Rotate icon
+                if (content.classList.contains('hidden')) {
+                    icon.style.transform = 'rotate(0deg)';
+                } else {
+                    icon.style.transform = 'rotate(180deg)';
+                }
+                
+                // Close other open FAQs
+                document.querySelectorAll('.faq-content').forEach(item => {
+                    if (item !== content && !item.classList.contains('hidden')) {
+                        item.classList.add('hidden');
+                        const otherIcon = item.previousElementSibling.querySelector('i');
+                        otherIcon.style.transform = 'rotate(0deg)';
+                    }
+                });
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+        
+        // Form submission (would be connected to backend in production)
+        const form = document.querySelector('form');
+        if (form) {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Thank you for your booking request! We will contact you shortly to confirm.');
+                form.reset();
+            });
+        }
+    </script>
+</body>
+</html>
